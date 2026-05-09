@@ -11,11 +11,23 @@ const ContactSection = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Logic to send message goes here
+
+    // Construct the WhatsApp message
+    const message = `*New Contact Message - Smile Optical Centre*
+    
+*Name:* ${formData.name}
+*Email:* ${formData.email}
+*Message:* ${formData.message}`;
+
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/233244973402?text=${encodedMessage}`;
+
+    // Redirect to WhatsApp
+    window.open(whatsappUrl, '_blank');
+
     console.log('Form submitted:', formData);
     // Reset after submission
     setFormData({ name: '', email: '', message: '' });
-    alert("Thank you! Your message has been sent.");
   };
 
   return (

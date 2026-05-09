@@ -84,8 +84,39 @@ const AppointmentSection = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (!selectedTime) {
+      alert('Please select a preferred time for your appointment.');
+      return;
+    }
+
+    // Format the date for the message
+    const formattedDate = selectedDate.toLocaleDateString('en-GB', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+
+    // Construct the WhatsApp message
+    const message = `*New Appointment Request - Smile Optical Centre*
+    
+*Name:* ${formData.name}
+*Phone:* ${formData.phone}
+*Date of Birth:* ${formData.dob}
+*Sex:* ${formData.sex}
+*Service:* ${formData.service}${formData.service === 'Other' ? ` (${formData.otherService})` : ''}
+*Insurance:* ${formData.hasInsurance === 'yes' ? `Yes - ${formData.insuranceProvider}` : 'No'}
+*Preferred Date:* ${formattedDate}
+*Preferred Time:* ${selectedTime}`;
+
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/233244973402?text=${encodedMessage}`;
+
+    // Redirect to WhatsApp
+    window.open(whatsappUrl, '_blank');
+
     console.log('Booking submitted:', { ...formData, selectedDate, selectedTime });
-    alert('Thank you! Your appointment request has been sent.');
   };
 
   const renderCalendarDays = () => {
