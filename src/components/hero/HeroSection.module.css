@@ -1,0 +1,36 @@
+.scrollTrack {
+  height: 500vh;
+  position: relative;
+  width: 100%;
+}
+
+.heroSection {
+  position: sticky;
+  top: var(--navbar-height);
+  min-height: calc(100vh - var(--navbar-height));
+  height: auto;
+  width: 100%;
+  padding: 4rem 4% 4rem; /* Increased top padding to push content away from nav */
+  display: flex;
+  align-items: flex-start;
+  overflow: visible;
+  z-index: 10;
+  background-color: var(--color-background);
+}
+
+.heroContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .heroContainer {
+    grid-template-columns: 1.4fr 0.8fr; /* Much narrower right side to crop image width */
+    align-items: stretch; /* Stretch columns so they match height */
+    gap: 4rem;
+  }
+}

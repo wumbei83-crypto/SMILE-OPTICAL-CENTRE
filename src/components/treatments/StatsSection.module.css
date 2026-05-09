@@ -1,0 +1,210 @@
+.section {
+  padding: 8rem 2rem;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch; /* Ensure both columns are same height */
+  max-width: 1250px;
+  width: 100%;
+  gap: 4rem;
+}
+
+.leftCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+  max-width: 520px;
+}
+
+.topText {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.6;
+  max-width: 320px;
+  margin: 0;
+  margin-bottom: 3rem; /* Space between text and cards */
+}
+
+.cardsContainer {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.darkCard {
+  background-color: #3b281b; /* Dark brown from the design */
+  border-radius: 28px;
+  padding: 2.5rem 2rem;
+  width: 250px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+  box-shadow: 0 15px 35px rgba(59, 40, 27, 0.15);
+}
+
+.percent {
+  font-size: 4.8rem;
+  font-weight: 300;
+  line-height: 1;
+  margin: 0 0 1.2rem 0;
+  letter-spacing: -2px;
+  color: #ffffff;
+}
+
+.darkSubText {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #d8cec5;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 160px;
+}
+
+.reviewsWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.avatars {
+  display: flex;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #3b281b;
+  object-fit: cover;
+}
+
+.avatar + .avatar {
+  margin-left: -12px;
+}
+
+.reviewText {
+  font-size: 0.65rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #d8cec5;
+  letter-spacing: 0.5px;
+}
+
+.lightCard {
+  background-color: #f2f2f2;
+  border-radius: 28px;
+  padding: 2.5rem 1.5rem;
+  width: 230px;
+  height: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.number {
+  font-size: 4.5rem;
+  font-weight: 400;
+  color: #3b281b;
+  line-height: 1;
+  margin: 0 0 1rem 0;
+  letter-spacing: -2px;
+}
+
+.lightSubText {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #666;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.rightCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 50%;
+  max-width: 580px;
+}
+
+.imageWrapper {
+  align-self: flex-end; /* Push image to the right */
+  width: 100%;
+  max-width: 420px;
+  height: 220px;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  margin-bottom: 3rem; /* Space between image and text */
+}
+
+.imageWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.largeText {
+  font-size: 2.1rem;
+  font-weight: 400;
+  color: #222;
+  text-transform: uppercase;
+  line-height: 1.4;
+  margin: 0;
+  max-width: 500px;
+  letter-spacing: -0.5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+  }
+  .leftCol, .rightCol {
+    width: 100%;
+    max-width: 600px;
+    align-items: center;
+    text-align: center;
+  }
+  .topText {
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+  .imageWrapper {
+    align-self: center;
+    max-width: 100%;
+    height: 300px;
+    margin-bottom: 2rem;
+  }
+  .largeText {
+    max-width: 100%;
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .cardsContainer {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .darkCard, .lightCard {
+    width: 100%;
+    max-width: 300px;
+  }
+}

@@ -1,0 +1,126 @@
+.section {
+  padding: 6rem 2rem;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.8rem;
+  font-weight: 500;
+  color: #3b231c;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+}
+
+.subtext {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+  line-height: 1.6;
+}
+
+.marqueeArea {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem 0;
+  cursor: pointer;
+}
+
+.marqueeTrack {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+.marqueeInner {
+  display: flex;
+  gap: 4rem; /* 64px gap */
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.logoWrapper {
+  flex-shrink: 0;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.logoContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  clip-path: circle(71% at 50% 50%); /* Start with full square visible (sqrt(2)/2) */
+  padding: 1rem;
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: grayscale(100%) opacity(0.7);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover effect for the specific logo hovered */
+.logoWrapper:hover .logoContainer {
+  clip-path: circle(48% at 50% 50%);
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.logoWrapper:hover .logo {
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.1);
+}
+
+@media (max-width: 992px) {
+  .title {
+    font-size: 2.4rem;
+  }
+  .logoWrapper {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  .section {
+    padding: 4rem 0;
+  }
+  .marqueeInner {
+    gap: 2rem;
+  }
+  .logoWrapper {
+    width: 140px;
+    height: 140px;
+  }
+}

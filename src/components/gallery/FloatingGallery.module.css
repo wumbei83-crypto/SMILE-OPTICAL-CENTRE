@@ -1,0 +1,158 @@
+.section {
+  padding: 6rem 2rem;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.item {
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+}
+
+.item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Scaled down sizes to fit standard screens without cutoff */
+.image1 {
+  width: 180px;
+  height: 320px;
+  animation: floatAnim 6s ease-in-out infinite;
+  animation-delay: 0s;
+}
+
+.image2 {
+  width: 220px;
+  height: 260px;
+  animation: floatAnim 7s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+.darkCard {
+  width: 280px;
+  height: 300px;
+  background-color: #111;
+  color: white;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+  animation: floatAnim 8s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+.image3 {
+  width: 200px;
+  height: 240px;
+  animation: floatAnim 6.5s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.image4 {
+  width: 190px;
+  height: 340px;
+  animation: floatAnim 7.5s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.cardText {
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.contactPill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #222;
+  border-radius: 50px;
+  padding: 0.4rem 0.4rem 0.4rem 1.2rem;
+  margin-top: auto;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.contactPill:hover {
+  background-color: #333;
+}
+
+.contactText {
+  color: #aaa;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.arrowButton {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.arrowIcon {
+  width: 16px;
+  height: 16px;
+  stroke: #111;
+  stroke-width: 2;
+}
+
+@keyframes floatAnim {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .container {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  
+  .darkCard {
+    order: -1; /* Move card to the top on smaller screens */
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
+
+  .item {
+    width: calc(50% - 0.75rem);
+    height: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .item {
+    width: 100%;
+    height: 320px;
+  }
+}

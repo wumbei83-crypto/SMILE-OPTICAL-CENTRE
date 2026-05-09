@@ -1,0 +1,257 @@
+.contentContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  z-index: 2;
+  height: 100%; /* Ensure it spans full height of grid cell */
+}
+
+.headlineWrapper {
+  position: relative;
+  display: grid;
+  grid-template-areas: "content";
+  align-items: center; /* keep them aligned */
+}
+
+.headline {
+  grid-area: content;
+  font-size: clamp(2.5rem, 4.5vw, 4rem);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  font-weight: 500; /* Reduced weight */
+  margin-top: -0.2em; /* Micro-adjustment to perfectly align with image box */
+  line-height: 1.1;
+}
+
+.headlineNew {
+  font-size: clamp(3rem, 5vw, 4.8rem);
+  font-weight: 600;
+  line-height: 1.1;
+  color: #111;
+}
+
+.visionDots {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  margin-left: 0.3em;
+  /* Shift slightly down to visually center with capital letters */
+  transform: translateY(-0.05em);
+}
+
+.dot {
+  width: 0.75em; /* 0.75em matches the exact cap-height of the text */
+  height: 0.75em;
+  border-radius: 50%;
+  background-color: var(--color-primary-pink);
+  display: inline-block;
+}
+
+.dotBlurry {
+  filter: blur(8px);
+  /* Expand slightly so the blurred edge doesn't make it look smaller */
+  transform: scale(1.15);
+  opacity: 0.85;
+}
+
+.dotSolid {
+  /* solid border effect inherently handled by sharp edges */
+}
+
+.subheadWrapper {
+  display: grid;
+  grid-template-areas: "content";
+}
+
+.subheadline {
+  grid-area: content;
+  max-width: 90%;
+}
+
+.subheadlineNew {
+  grid-area: content;
+  max-width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.subheadlineNew p {
+  margin: 0;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  color: #444;
+}
+
+@media (min-width: 1024px) {
+  .subheadline {
+    max-width: 80%;
+  }
+}
+
+.ctaWrapper {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.ctaGroup {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.socialProof {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.avatars {
+  display: flex;
+  align-items: center;
+}
+
+.avatar, .avatarInitials {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  object-fit: cover;
+  margin-left: -12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.avatarInitials:first-child {
+  margin-left: 0;
+}
+
+.avatarInitials:hover {
+  transform: translateY(-5px);
+  z-index: 10;
+}
+
+.avatarMore {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background: var(--color-primary-pink);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-left: -12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+
+.proofText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+}
+
+.star {
+  color: #FFB800;
+  font-size: 1.1rem;
+}
+
+.proofText p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.proofText strong {
+  color: #222;
+  font-weight: 600;
+}
+
+/* Premium Insurance Badge */
+.insuranceBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 160, 240, 0.3);
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  width: fit-content;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.insuranceBadge:hover {
+  transform: translateY(-3px) scale(1.02);
+  background: rgba(255, 255, 255, 0.8);
+  border-color: var(--color-primary-pink);
+  box-shadow: 0 10px 25px rgba(255, 160, 240, 0.2);
+}
+
+.badgeIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary-pink);
+  transition: transform 0.4s ease;
+}
+
+.insuranceBadge:hover .badgeIcon {
+  transform: rotate(10deg);
+}
+
+.badgeText {
+  color: #333;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.badgeArrow {
+  display: flex;
+  align-items: center;
+  color: var(--color-primary-pink);
+  opacity: 0.6;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.insuranceBadge:hover .badgeArrow {
+  transform: translateX(3px);
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .insuranceBadge {
+    padding: 0.5rem 1rem;
+  }
+  .badgeText {
+    font-size: 0.85rem;
+  }
+}

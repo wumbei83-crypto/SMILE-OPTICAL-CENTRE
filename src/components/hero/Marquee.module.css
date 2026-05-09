@@ -1,0 +1,35 @@
+.marqueeSection {
+  padding: 1rem 0 4rem; /* Removed top border, reduced top padding */
+  background: var(--color-background);
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.marqueeItem {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding-right: 3rem;
+}
+
+.marqueeItem span {
+  font-size: clamp(3rem, 6vw, 6rem);
+  font-weight: 400;
+  font-family: var(--font-sans);
+  font-style: italic;
+  letter-spacing: -0.02em;
+  color: var(--color-dark);
+}
+
+.circleArrow {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #F0F0F0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--color-dark);
+}

@@ -1,0 +1,261 @@
+.section {
+  padding: 8rem 2rem;
+  background-color: #fcfcfc;
+  display: flex;
+  justify-content: center;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.container {
+  display: flex;
+  max-width: 1250px;
+  width: 100%;
+  gap: 4rem;
+  align-items: stretch;
+}
+
+.leftCol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 5rem 3rem;
+  flex: 1.8;
+}
+
+.topLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 2.8rem;
+  font-weight: 400;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.2;
+  text-transform: uppercase;
+  max-width: 400px;
+  letter-spacing: -0.5px;
+}
+
+.topRight {
+  display: flex;
+  flex-direction: column;
+}
+
+.description {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 300px;
+  margin-top: 0.5rem; /* Slight offset from the title's absolute top */
+}
+
+.bottomLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.statBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.statTitle {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #111;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+}
+
+.statText {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 250px;
+}
+
+.bottomRight {
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  background-color: #f2f2f2;
+  border-radius: 30px;
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.cardTitle {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #111;
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+}
+
+.cardText {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+  margin: 0 0 3rem 0;
+  max-width: 250px;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: auto;
+}
+
+.accreditations {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.accreditationText {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #888;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.accreditationLogos {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logoItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  animation: float 4s ease-in-out infinite;
+}
+
+.logoItem:nth-child(1) { animation-delay: 0s; }
+.logoItem:nth-child(2) { animation-delay: 0.8s; }
+.logoItem:nth-child(3) { animation-delay: 1.6s; }
+.logoItem:nth-child(4) { animation-delay: 2.4s; }
+.logoItem:nth-child(5) { animation-delay: 3.2s; }
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+.logoItem img {
+  height: 50px;
+  object-fit: contain;
+  filter: grayscale(100%) opacity(0.7);
+  transition: all 0.3s ease;
+}
+
+.logoItem:hover img {
+  filter: grayscale(0%) opacity(1);
+}
+
+.logoItem span {
+  font-size: 0.8rem;
+  color: #555;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.arrowButton {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #3b281b;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 8px 20px rgba(59, 40, 27, 0.3);
+}
+
+.arrowButton:hover {
+  transform: scale(1.05);
+  background-color: #4a3424;
+}
+
+.rightCol {
+  flex: 1;
+  max-width: 380px;
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 550px; /* Tall portrait image */
+  border-radius: 35px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.imageWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .leftCol {
+    flex: none;
+    width: 100%;
+    max-width: 700px;
+  }
+  .rightCol {
+    flex: none;
+    width: 100%;
+    max-width: 500px;
+    margin-top: 2rem;
+  }
+  .imageWrapper {
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .leftCol {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .title {
+    font-size: 2.2rem;
+  }
+  .card {
+    padding: 2rem;
+  }
+  .section {
+    padding: 5rem 1.5rem;
+  }
+}
